@@ -1,3 +1,4 @@
+https://rstudioclass.blogspot.com/2025/09/assignment-2.html
 # When we run:
 #   assignment2 <- c(16, 18, 14, 22, 27, 17, 19, 17, 17, 22, 20, 22)
 #   
