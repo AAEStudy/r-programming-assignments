@@ -1,4 +1,5 @@
 #R assignment 3
+#https://rstudioclass.blogspot.com/2025/09/r-assignment-3.html
 
 Name     <- c("Jeb", "Donald", "Ted", "Marco", "Carly", "Hillary", "Bernie")
 ABC_poll <- c(  4,      62,      51,    21,      2,        14,       15)
