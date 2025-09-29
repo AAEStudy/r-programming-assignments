@@ -12,3 +12,8 @@ detA <- det(A)
 # For B, use tryCatch to capture errors
 invB <- tryCatch(solve(B), error = function(e) e)
 detB <- tryCatch(det(B),   error = function(e) e)
+
+print(invA)
+print(detA)
+print(invB)
+print(detB)
