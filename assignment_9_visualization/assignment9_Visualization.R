@@ -39,6 +39,15 @@ lp <- xyplot(hp ~ wt | factor(cyl),
              pch = 20, col = "darkblue")
 print(lp)
 
+# Lattice: box-and-whisker plot of mpg by cyl
+bw <- bwplot(mpg ~ factor(cyl),
+             data = mtcars,
+             main = "Lattice: MPG by cyl (box-and-whisker)",
+             xlab = "cyl",
+             ylab = "MPG",
+             col = "lightblue")
+print(bw)
+
 # ggplot2: mpg vs hp with smoothing by gear
 p <- ggplot(mtcars, aes(x = hp, y = mpg, color = factor(gear))) +
   geom_point() +
