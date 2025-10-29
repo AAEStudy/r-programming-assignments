@@ -59,5 +59,3 @@ p <- ggplot(mtcars, aes(x = hp, y = mpg, color = factor(gear))) +
   theme_minimal()
 print(p)
 
-cat("\nA few rows of mtcars (for blog):\n"); print(head(mtcars, 6))
-cat("\nSummary (first few cols):\n"); print(summary(mtcars)[1:4])
