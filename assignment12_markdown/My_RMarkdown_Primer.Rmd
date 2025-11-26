@@ -1,0 +1,82 @@
+---
+title: "My R Markdown Primer"
+author: "Zach Wunder"
+date: "2025-11-20"
+output: html_document
+---
+
+# Introduction
+
+R Markdown mixes narrative, code, and output.  
+It makes analysis reproducible.  
+You can knit to HTML or PDF and share the result.
+
+# Quick math examples
+
+Inline example: $\alpha + \beta = \gamma$.
+
+Displayed equation:
+
+$$
+\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i
+$$
+
+# Load data and show summary
+
+```{r load-and-summary, echo=TRUE}
+# load dataset and show first rows and basic summary
+data("mtcars", package = "datasets")
+head(mtcars)
+summary(mtcars$mpg)
+```
+
+# Compute simple statistics
+
+```{r simple-stats, echo=TRUE}
+# compute mean and sd of mpg and group means by cyl
+mean_mpg <- mean(mtcars$mpg, na.rm = TRUE)
+sd_mpg <- sd(mtcars$mpg, na.rm = TRUE)
+group_means <- aggregate(mpg ~ cyl, data = mtcars, FUN = mean)
+mean_mpg
+sd_mpg
+group_means
+```
+
+# Make a quick ggplot
+
+```{r plot-mtcars, echo=TRUE, message=FALSE, warning=FALSE}
+# create a scatter with trend lines colored by cylinder
+if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2")
+library(ggplot2)
+ggplot(mtcars, aes(x = hp, y = mpg, color = factor(cyl))) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "MPG vs Horsepower by Cylinder",
+       x = "Horsepower",
+       y = "Miles per Gallon",
+       color = "cyl") +
+  theme_minimal()
+```
+
+# Small base R plot
+
+```{r base-plot, echo=TRUE}
+# simple base histogram of mpg
+hist(mtcars$mpg,
+     breaks = 8,
+     main = "Base: Distribution of MPG",
+     xlab = "MPG")
+```
+
+# Reflection
+
+R Markdown kept code and text together.  
+Knitting produced an HTML file with code output and plots.  
+I liked that I can edit code and re-knit to update results.  
+One tip. Run chunks interactively first to catch errors before knitting.
+
+# Session info
+
+```{r session-info, echo=TRUE}
+sessionInfo()
+```
