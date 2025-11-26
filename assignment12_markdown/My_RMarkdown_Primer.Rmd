@@ -2,7 +2,7 @@
 title: "My R Markdown Primer"
 author: "Zach Wunder"
 date: "2025-11-20"
-output: html_document
+output: pdf_document
 ---
 
 # Introduction
